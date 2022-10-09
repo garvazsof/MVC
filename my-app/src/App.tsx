@@ -3,37 +3,42 @@ import { Web3Auth } from "@web3auth/web3auth";
 import { CHAIN_NAMESPACES, SafeEventEmitterProvider } from "@web3auth/base";
 import RPC from "./ethersRPC";
 import "./App.css";
+import contract from './contracts/Video721.json';
 
 const clientId = `${process.env.CLIENT_ID}`; // get from https://dashboard.web3auth.io
+const contractAddress = "0x8ea11069484dA05d463946AFEDa9017503B30afA";
+const abi = contract.abi;
 
 function App() {
+
   const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
   const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(null);
 
   useEffect(() => {
+
     const init = async () => {
       try {
 
-      const web3auth = new Web3Auth({
-        clientId,
-        chainConfig: {
-          chainNamespace: CHAIN_NAMESPACES.EIP155,
-          chainId: "0x5",
-          rpcTarget: "https://rpc.ankr.com/eth_goerli", // This is the public RPC we have added, please pass on your own endpoint while creating an app
-        },
-      });
+        const web3auth = new Web3Auth({
+          clientId,
+          chainConfig: {
+            chainNamespace: CHAIN_NAMESPACES.EIP155,
+            chainId: "0x5",
+            rpcTarget: "https://rpc.ankr.com/eth_goerli", // This is the public RPC we have added, please pass on your own endpoint while creating an app
+          },
+        });
 
-      setWeb3auth(web3auth);
+        setWeb3auth(web3auth);
 
-      await web3auth.initModal();
-        if (web3auth.provider) {
-          setProvider(web3auth.provider);
-        };
+        await web3auth.initModal();
+          if (web3auth.provider) {
+            setProvider(web3auth.provider);
+          };
+
       } catch (error) {
         console.error(error);
       }
     };
-
     init();
   }, []);
 
@@ -122,6 +127,7 @@ function App() {
     const privateKey = await rpc.getPrivateKey();
     console.log(privateKey);
   };
+
   const loggedInView = (
     <>
       <button onClick={getUserInfo} className="card">
