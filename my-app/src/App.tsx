@@ -49,6 +49,7 @@ function App() {
     }
     const web3authProvider = await web3auth.connect();
     setProvider(web3authProvider);
+    console.log("Now Connected 💥");
   };
 
   const getUserInfo = async () => {
@@ -167,21 +168,41 @@ function App() {
     </button>
   );
 
+  const checkWalletIsConnected = () => { }
+
+  const connectWalletHandler = () => { }
+
+  const mintNftHandler = () => { }
+
+  const connectWalletButton = () => {
+    return (
+      <button onClick={connectWalletHandler} className='cta-button connect-wallet-button'>
+        Connect Wallet
+      </button>
+    )
+  }
+
+  const mintNftButton = () => {
+    return (
+      <button onClick={mintNftHandler} className='cta-button mint-nft-button'>
+        Mint NFT
+      </button>
+    )
+  }
+
   return (
     <div className="container">
       <h1 className="title">
-        <a target="_blank" href="http://web3auth.io/" rel="noreferrer">
-          Web3Auth
+        <a target="_blank" href="#" rel="noreferrer">
+          MVC App
         </a>
-        & ReactJS Example
+        | Empowering Creators
       </h1>
 
       <div className="grid">{provider ? loggedInView : unloggedInView}</div>
 
       <footer className="footer">
-        <a href="https://github.com/Web3Auth/Web3Auth/tree/master/examples/react-app" target="_blank" rel="noopener noreferrer">
-          Source code
-        </a>
+        <p>MVC empowers you</p>
       </footer>
     </div>
   );
