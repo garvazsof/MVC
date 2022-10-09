@@ -29,3 +29,27 @@ MVC empowers the creators, allowing them to create a better fans relationship an
 
 This project enables the login and subscription with web3Auth, creates video NFTs with Livepeer, enables whitelists for events using contracts on Goerli.
 
+## How to test it
+
+You need to install & run the app in the my-app folder:
+
+
+#### Quick start 
+
+
+<details>
+<summary>Manual setup</summary>
+
+1. Install packages
+
+```bash
+cd my-app && install
+```
+
+2. Run it!
+
+```bash
+npm start
+```
+
+</details>
