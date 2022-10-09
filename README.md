@@ -43,7 +43,7 @@ You need to install & run the app in the my-app folder:
 1. Install packages
 
 ```bash
-cd my-app && install
+cd my-app && npm install
 ```
 
 2. Run it!
