@@ -27,5 +27,5 @@ MVC empowers the creators, allowing them to create a better fans relationship an
 			- The fan access to a number of events
 
 
-This project enables the login and subscription with web3Auth, creates video NFTs with Livepeer, enables whitelists for events using contracts on Polygon.
+This project enables the login and subscription with web3Auth, creates video NFTs with Livepeer, enables whitelists for events using contracts on Goerli.
 
